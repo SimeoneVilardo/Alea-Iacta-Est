@@ -69,7 +69,7 @@ namespace Alea_Iacta_Est_GUI
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
-            int coins = 50;
+            coins = 50;
             btnPlay.Enabled = true;
             txtBet.Enabled = true;
             txtGuess.Enabled = true;
