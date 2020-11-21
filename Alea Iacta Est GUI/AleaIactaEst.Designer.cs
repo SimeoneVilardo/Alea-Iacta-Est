@@ -36,12 +36,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.txtGuess = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblDiceSum = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -105,15 +106,16 @@
             // 
             this.groupBox1.Controls.Add(this.lblDice1);
             this.groupBox1.Controls.Add(this.lblDice2);
-            this.groupBox1.Location = new System.Drawing.Point(419, 22);
+            this.groupBox1.Location = new System.Drawing.Point(435, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 128);
+            this.groupBox1.Size = new System.Drawing.Size(360, 128);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tavolo";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnRestart);
             this.groupBox2.Controls.Add(this.btnExit);
             this.groupBox2.Controls.Add(this.txtGuess);
             this.groupBox2.Controls.Add(this.label2);
@@ -123,10 +125,20 @@
             this.groupBox2.Controls.Add(this.txtBet);
             this.groupBox2.Location = new System.Drawing.Point(15, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(398, 128);
+            this.groupBox2.Size = new System.Drawing.Size(414, 128);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giocatore";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(245, 21);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.Text = "Esci";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txtGuess
             // 
@@ -175,15 +187,15 @@
             this.lblDiceSum.TabIndex = 0;
             this.lblDiceSum.Text = "I dadi non sono ancora stati lanciati";
             // 
-            // btnExit
+            // btnRestart
             // 
-            this.btnExit.Location = new System.Drawing.Point(245, 21);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.Text = "Esci";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnRestart.Location = new System.Drawing.Point(326, 21);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(75, 23);
+            this.btnRestart.TabIndex = 11;
+            this.btnRestart.Text = "Ricomincia";
+            this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // AleaIactaEst
             // 
@@ -221,6 +233,7 @@
         private System.Windows.Forms.Label lblDiceSum;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnRestart;
     }
 }
 

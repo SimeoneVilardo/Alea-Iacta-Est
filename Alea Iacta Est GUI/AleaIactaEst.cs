@@ -38,7 +38,7 @@ namespace Alea_Iacta_Est_GUI
             lblDice1.Text = string.Format("Primo dado: {0}", dice1);
             lblDice2.Text = string.Format("Secondo dado: {0}", dice2);
             lblDiceSum.Text = string.Format("La somma dei due dadi lanciati è \"{0}\" e tu avevi scomesso su \"{1}\"", sum, guess);
-            if(sum == guess)
+            if (sum == guess)
             {
                 int reward = bet * 10;
                 coins = coins + reward;
@@ -49,18 +49,37 @@ namespace Alea_Iacta_Est_GUI
             {
                 lblResult.Text = "Hai perso...";
             }
-            if(coins <= 0)
+            if (coins <= 0)
             {
                 btnPlay.Enabled = false;
                 txtBet.Enabled = false;
                 txtGuess.Enabled = false;
                 MessageBox.Show("Hai terminato tutti i sesterzi a tua disposizione, non puoi più giocare", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            txtBet.Clear();
+            txtGuess.Clear();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Sei sicuro di voler uscire?", "Esci", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            int coins = 50;
+            btnPlay.Enabled = true;
+            txtBet.Enabled = true;
+            txtGuess.Enabled = true;
+            lblCoins.Text = string.Format("Hai {0} sesterzi", coins);
+            lblDiceSum.Text = "I dadi non sono stati ancora lanciati";
+            lblDice1.Text = "Primo dado:";
+            lblDice2.Text = "Secondo dado:";
+            lblResult.Text = string.Empty;
+            txtBet.Clear();
+            txtGuess.Clear();
         }
     }
 }
