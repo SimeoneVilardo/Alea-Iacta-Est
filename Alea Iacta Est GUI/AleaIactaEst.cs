@@ -51,9 +51,16 @@ namespace Alea_Iacta_Est_GUI
             }
             if(coins <= 0)
             {
-                MessageBox.Show("Hai terminato tutti i sesterzi a tua disposizione, non puoi più giocare. Premi ok per terminare il programma.", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                Application.Exit();
+                btnPlay.Enabled = false;
+                txtBet.Enabled = false;
+                txtGuess.Enabled = false;
+                MessageBox.Show("Hai terminato tutti i sesterzi a tua disposizione, non puoi più giocare", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
